@@ -7,7 +7,7 @@
 
 .env
 
-request.rest
+/request.rest
 
 # testing
 /coverage
