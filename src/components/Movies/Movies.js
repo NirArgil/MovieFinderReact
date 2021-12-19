@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from '../Navbar/Navbar.js';
 import Card from '../Card/Card.js';
+import * as initStateMovies from './initStateMovies.json';
 
 const Movies = () => {
-    const [movies, setMovies] = useState([]);
+    const [movies, setMovies] = useState(initStateMovies.default);
     const [searchTerm, setsearchTerm] = useState('');
 
     const searchMovie = (e) => {
@@ -19,25 +20,8 @@ const Movies = () => {
             .then(res => res.json())
             .then((result) => {
                 setMovies(result.data.Search)
-
             })
     }
-
-    useEffect(() => {
-        let URL = `http://localhost:3001/api/super`
-
-        fetch(URL, {
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-        })
-            .then(res => res.json())
-            .then((result) => {
-                setMovies(result.data.Search)
-
-            })
-    }, [])
 
     return (
         <div>
