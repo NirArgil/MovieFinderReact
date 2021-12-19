@@ -46,7 +46,6 @@ const Card = ({ movie }) => {
                     />
                     <div className="movieDetails" >
                         <p className="heading">{movie.Title}</p>
-                        <p className="heading">{movie.imdbID}</p>
                         <button className="moreDetailsButton" onClick={moreDetails} data-video-id={movie.imdbID}>More Details</button>
                     </div>
                 </div>
